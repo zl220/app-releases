@@ -283,7 +283,6 @@
         /* Register button */
         .register-btn {
             display: inline-block;
-            margin-top: 5mm;
             padding: 3mm 12mm;
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
             color: var(--navy-deep);
@@ -302,6 +301,36 @@
         .register-btn:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 16px rgba(200, 168, 75, 0.5);
+        }
+
+        /* Action row: button centered, QR right */
+        .action-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 5mm;
+        }
+
+        .qr-inline {
+            position: absolute;
+            right: 0;
+            text-align: center;
+        }
+
+        .qr-inline #qrcode {
+            display: inline-block;
+            padding: 2mm;
+            background: var(--navy-deep);
+            border: 0.3mm solid rgba(200, 168, 75, 0.3);
+            border-radius: 2mm;
+        }
+
+        .qr-label {
+            font-size: 2.8mm;
+            color: rgba(255,255,255,0.5);
+            margin-top: 1mm;
+            letter-spacing: 1px;
         }
 
         /* Singapore skyline */
@@ -462,7 +491,7 @@
         <!-- Event Info -->
         <div class="info-section">
             <div class="info-row">
-                <span class="info-icon">📅</span>
+                <span class="info-icon">📅</span>n'g'z
                 <span class="info-text"><span class="info-highlight">6月14日（星期天）</span> 10:00 — 12:50</span>
             </div>
             <div class="info-row">
@@ -473,7 +502,13 @@
                 <span class="info-icon">👥</span>
                 <span class="info-text">活动名额：<span class="info-highlight">40人</span>（额满即止）</span>
             </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewQZM-8n5rpAEOdYL30GTUBqQpxTqVnqUsvdhtBm7dYstTeQ/viewform?usp=publish-editor" target="_blank" class="register-btn">立即报名</a>
+            <div class="action-row">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSewQZM-8n5rpAEOdYL30GTUBqQpxTqVnqUsvdhtBm7dYstTeQ/viewform?usp=publish-editor" target="_blank" class="register-btn">立即报名</a>
+                <div class="qr-inline">
+                    <div id="qrcode"></div>
+                    <div class="qr-label">扫码查看</div>
+                </div>
+            </div>
         </div>
 
         <!-- Singapore Skyline -->
@@ -534,5 +569,17 @@
             <div class="footer-coorg">协办：大学家研学私人有限公司 Unihomy Eduventure Pte. Ltd.</div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+        new QRCode(document.getElementById("qrcode"), {
+            text: "https://zl220.github.io/app-releases/sgxjtu-forum-20260614.html",
+            width: 110,
+            height: 110,
+            colorDark: "#0a1628",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.M
+        });
+    </script>
 </body>
 </html>
