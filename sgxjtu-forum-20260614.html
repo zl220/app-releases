@@ -320,9 +320,8 @@
 
         .qr-inline #qrcode {
             display: inline-block;
-            padding: 2mm;
-            background: var(--navy-deep);
-            border: 0.3mm solid rgba(200, 168, 75, 0.3);
+            padding: 3mm;
+            background: var(--navy-mid);
             border-radius: 2mm;
         }
 
@@ -412,8 +411,177 @@
             opacity: 0.4;
         }
 
+        /* Mobile responsive */
+        @media screen and (max-width: 768px) {
+            body {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+                overflow: auto;
+            }
+
+            .poster {
+                height: auto;
+                min-height: 100vh;
+                padding: 60px 20px 30px;
+            }
+
+            .top-bar {
+                height: 4px;
+            }
+
+            .top-bar::after {
+                bottom: -2px;
+                height: 2px;
+            }
+
+            .corner {
+                display: none;
+            }
+
+            .header {
+                margin-bottom: 20px;
+            }
+
+            .org-name {
+                font-size: 12px;
+                letter-spacing: 2px;
+                margin-bottom: 10px;
+            }
+
+            .main-title {
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .divider {
+                width: 40%;
+                margin: 16px auto;
+            }
+
+            .topics {
+                margin-bottom: 16px;
+            }
+
+            .topic {
+                padding: 14px 16px;
+                margin-bottom: 12px;
+                border-radius: 8px;
+            }
+
+            .topic::before {
+                width: 3px;
+            }
+
+            .topic-number {
+                font-size: 11px;
+                margin-bottom: 4px;
+            }
+
+            .topic-title {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+
+            .topic-speaker {
+                font-size: 12px;
+            }
+
+            .schedule-section {
+                margin-bottom: 16px;
+            }
+
+            .section-label {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            .schedule-grid {
+                gap: 6px;
+            }
+
+            .schedule-item {
+                padding: 5px 10px;
+                border-radius: 4px;
+            }
+
+            .schedule-time {
+                font-size: 12px;
+            }
+
+            .schedule-desc {
+                font-size: 12px;
+            }
+
+            .info-section {
+                margin-bottom: 16px;
+            }
+
+            .info-row {
+                margin-bottom: 6px;
+            }
+
+            .info-icon {
+                font-size: 14px;
+            }
+
+            .info-text {
+                font-size: 13px;
+            }
+
+            .register-btn {
+                padding: 10px 32px;
+                font-size: 14px;
+                border-radius: 6px;
+            }
+
+            .action-row {
+                flex-direction: column;
+                gap: 16px;
+                margin-top: 16px;
+            }
+
+            .qr-inline {
+                position: static;
+            }
+
+            .qr-inline #qrcode {
+                padding: 0;
+            }
+
+            .qr-label {
+                font-size: 10px;
+                margin-top: 4px;
+            }
+
+            .skyline {
+                height: 80px;
+                opacity: 0.08;
+            }
+
+            .footer {
+                padding-top: 12px;
+            }
+
+            .footer-org {
+                font-size: 11px;
+                margin-bottom: 4px;
+            }
+
+            .footer-coorg {
+                font-size: 10px;
+            }
+        }
+
         @media print {
             body {
+                width: 210mm;
+                height: 297mm;
+                overflow: hidden;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -576,8 +744,8 @@
             text: "https://zl220.github.io/app-releases/sgxjtu-forum-20260614.html",
             width: 110,
             height: 110,
-            colorDark: "#0a1628",
-            colorLight: "#ffffff",
+            colorDark: "#ffffff",
+            colorLight: "#1e3a5f",
             correctLevel: QRCode.CorrectLevel.M
         });
     </script>
